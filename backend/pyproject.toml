@@ -1,0 +1,4 @@
+[dependency-groups]
+dev = [
+    "fastapi[standard]>=0.141.1",
+]
