@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException,Body
-from backend.routers import trivy, opencve, suricata
+from routers import trivy, opencve, suricata
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from google.oauth2 import id_token
@@ -53,6 +53,10 @@ async def google_auth(payload: dict = Body(...)):
         }
     }
 
+
+@app.get("/")
+def welcome():
+    return {"status":"running"}
 
 @app.get("/health")
 def health_check():

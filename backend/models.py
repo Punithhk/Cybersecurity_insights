@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.sql import func
-from backend.database import Base
+from database import Base
 
 class LogEvent(Base):
     __tablename__ = "log_events"

@@ -2,10 +2,10 @@ import requests
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import Session
-from backend.database import get_db
-from backend.models import LogEvent
-from backend.redis_client import r
-from backend.schemas import IngestTriggerRequest
+from database import get_db
+from models import LogEvent
+from redis_client import r
+from schemas import IngestTriggerRequest
 
 router = APIRouter(prefix="/opencve", tags=["OpenCVE Ingestion"])
 OPENCVE_LOCK_KEY = "lock:opencve_ingestion"

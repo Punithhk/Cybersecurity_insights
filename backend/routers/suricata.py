@@ -2,9 +2,9 @@ import json
 import os
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from backend.database import get_db
-from backend.models import LogEvent
-from backend.redis_client import r
+from database import get_db
+from models import LogEvent
+from redis_client import r
 
 router = APIRouter(prefix="/suricata", tags=["Suricata Ingestion"])
 SURICATA_LOCK_KEY = "lock:suricata_ingestion"
